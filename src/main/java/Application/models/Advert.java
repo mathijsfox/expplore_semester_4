@@ -4,6 +4,7 @@ package Application.models;
 import Application.enums.Category;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import java.util.Date;
@@ -12,7 +13,9 @@ import java.util.Date;
 public class Advert {
 
     @Id
+    @GeneratedValue
     String id;
+
     String title;
     Category category;
     String description;

@@ -1,12 +1,23 @@
 package Application.REST.controllers;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import Application.models.Advert;
+import Application.models.User;
+import Application.services.AdvertService;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/adverts")
 @CrossOrigin(origins = "*")
 public class AdvertController {
 
+    private AdvertService advertService;
+
+    public AdvertController(AdvertService advertService){
+        this.advertService = advertService;
+    }
+
+    @PostMapping
+    public Advert postAdvert(@RequestBody Advert advert){
+        return advertService.postAdvert(advert);
+    }
 }
