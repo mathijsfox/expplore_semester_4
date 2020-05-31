@@ -4,5 +4,6 @@ public enum Category {
     oneAxeTrailer,
     smallTruck,
     largeTruck,
-    twoAxeTrailer
+    twoAxeTrailer,
+    test
 }
